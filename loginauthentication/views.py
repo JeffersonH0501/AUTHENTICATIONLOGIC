@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from .models import User
+from ..models import User
 
 def verificar_usuario(usuario, clave):
     try:
