@@ -15,7 +15,7 @@ environ.setdefault('DJANGO_SETTINGS_MODULE', 'loginauthentication.settings')
 django.setup()
 
 from users import views
-import producer
+from . import producer
 
 connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbit_host, credentials=pika.PlainCredentials(rabbit_user, rabbit_password)))
 channel = connection.channel()
@@ -44,7 +44,7 @@ def verificar_usuario(usuario, clave):
 
     producer.enviar_mensaje_autenticacion(respuesta)
     
-    pass
+    return respuesta
 
 channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
 

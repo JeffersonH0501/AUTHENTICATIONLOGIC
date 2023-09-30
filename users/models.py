@@ -1,7 +1,7 @@
 from django.db import models
 
 class User(models.Model):
-    usario = models.CharField(max_length=50)
+    usuario = models.CharField(max_length=50)
     clave = models.CharField(max_length=50)
 
     def __str__(self):

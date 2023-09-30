@@ -9,6 +9,7 @@ topic = 'LOGIN'
 
 def enviar_mensaje_autenticacion(mensaje):
 
+    print("hola")
     try:
         connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbit_host, credentials=pika.PlainCredentials(rabbit_user, rabbit_password)))
         channel = connection.channel()

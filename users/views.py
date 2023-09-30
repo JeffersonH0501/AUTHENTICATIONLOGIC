@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from .models import User
 
 def verificar_usuario(usuario, clave):
@@ -8,4 +7,4 @@ def verificar_usuario(usuario, clave):
     except User.DoesNotExist:
         response_data = "INVALIDO"
 
-    return HttpResponse(response_data)
+    return response_data
