@@ -10,6 +10,7 @@ topic = 'LOGIN'
 def send_authentication_message():
 
     try:
+        
         connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbit_host, credentials=pika.PlainCredentials(rabbit_user, rabbit_password)))
         channel = connection.channel()
 
