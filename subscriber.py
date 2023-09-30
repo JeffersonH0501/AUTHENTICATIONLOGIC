@@ -29,7 +29,7 @@ for topic in topics:
 
 print('> Esperando autenticacion.')
 
-def callback(ch, method, body):
+def callback(ch, method, properties, body):
     try:
         usuario, clave = body.decode('utf-8').split()
         resultado = verificar_usuario(usuario, clave)
