@@ -3,11 +3,9 @@ import pika
 from sys import path
 from os import environ
 import django
-from loginauthentication import views
-from . import producer
 
-rabbit_host = 'host'
-rabbit_user = 'monitoring_user'
+rabbit_host = '10.128.0.2'
+rabbit_user = 'broker_user'
 rabbit_password = 'isis2503'
 exchange = 'loginauthentication_users'
 topics = ['AUTENTICACION']
@@ -16,7 +14,8 @@ path.append('loginauthentication/settings.py')
 environ.setdefault('DJANGO_SETTINGS_MODULE', 'loginauthentication.settings')
 django.setup()
 
-from users.logic.logic_users import get_users
+from loginauthentication import views
+import producer
 
 connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbit_host, credentials=pika.PlainCredentials(rabbit_user, rabbit_password)))
 channel = connection.channel()
