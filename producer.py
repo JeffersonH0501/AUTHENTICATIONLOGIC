@@ -17,8 +17,6 @@ def enviar_mensaje_autenticacion(mensaje):
         
         channel.basic_publish(exchange=exchange, routing_key=topic, body=mensaje)
 
-        print('> Respuesta de la solicitud enviada')
-
         connection.close()
     
     except Exception as e:

@@ -37,6 +37,7 @@ def callback(ch, method, properties, body):
         resultado = verificar_usuario(usuario, clave)
         print("> recibido > usuario: "+usuario+", clave: "+clave)
         print('> Resultado de la validación: '+resultado)
+        print('> Respuesta de la solicitud enviada')
     except Exception as e:
         print(f"Error en el callback: {str(e)}")
 
