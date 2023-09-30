@@ -9,7 +9,6 @@ topic = 'LOGIN'
 
 def enviar_mensaje_autenticacion(mensaje):
 
-    print("hola")
     try:
         connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbit_host, credentials=pika.PlainCredentials(rabbit_user, rabbit_password)))
         channel = connection.channel()
@@ -18,7 +17,7 @@ def enviar_mensaje_autenticacion(mensaje):
         
         channel.basic_publish(exchange=exchange, routing_key=topic, body=mensaje)
 
-        print('> autenticacion enviada.')
+        print('> Respuesta de la solicitud enviada')
 
         connection.close()
     

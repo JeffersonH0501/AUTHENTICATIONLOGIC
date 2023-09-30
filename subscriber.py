@@ -29,14 +29,14 @@ for topic in topics:
 
 #views.agregar_usuario('Jeff','123')
 
-print('> Esperando autenticacion.')
+print('> Esperando solicitudes de autenticacion')
 
 def callback(ch, method, properties, body):
     try:
         usuario, clave = body.decode('utf-8').split()
         resultado = verificar_usuario(usuario, clave)
-        print(f'Recibido: {usuario}')
-        print(f'Resultado de verificación: {resultado}')
+        print("> recibido > usuario: "+usuario+", clave: "+clave)
+        print('> Resultado de la validación: '+resultado)
     except Exception as e:
         print(f"Error en el callback: {str(e)}")
 
