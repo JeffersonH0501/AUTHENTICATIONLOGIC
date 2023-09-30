@@ -8,3 +8,8 @@ def verificar_usuario(usuario, clave):
         response_data = "INVALIDO"
 
     return response_data
+
+def agregar_usuario(usuario, clave):
+    nuevo_usuario = User(usuario=usuario, clave=clave)
+    nuevo_usuario.save()
+    print("usuario agregado con exito")

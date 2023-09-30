@@ -27,6 +27,8 @@ queue_name = result.method.queue
 for topic in topics:
     channel.queue_bind(exchange=exchange, queue=queue_name, routing_key=topic)
 
+#views.agregar_usuario('Jeff','123')
+
 print('> Esperando autenticacion.')
 
 def callback(ch, method, properties, body):
