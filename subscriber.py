@@ -15,7 +15,7 @@ environ.setdefault('DJANGO_SETTINGS_MODULE', 'loginauthentication.settings')
 django.setup()
 
 from users import views
-from . import producer
+import producer
 
 connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbit_host, credentials=pika.PlainCredentials(rabbit_user, rabbit_password)))
 channel = connection.channel()
