@@ -1,4 +1,4 @@
-from ..models import User
+from ...loginauthentication.models import User
 
 def get_users():
     queryset = User.objects.all()
