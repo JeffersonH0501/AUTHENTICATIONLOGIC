@@ -1,7 +1,6 @@
 from django.urls import path
-from django.views.decorators.csrf import csrf_exempt
-
-from . import views
+from .views import AutenticacionAPI
 
 urlpatterns = [
+    path('api/autenticacion/', AutenticacionAPI.as_view(), name='autenticacion-api'),
 ]
