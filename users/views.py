@@ -16,7 +16,7 @@ def verificar_usuario(usuario, clave):
 def agregar_usuario(usuario, clave):
     nuevo_usuario = User(usuario=usuario, clave=clave)
     nuevo_usuario.save()
-    print("usuario agregado con exito")
+    print("> usuario: "+ usuario + ", clave: " + clave + ". Agregado con exito")
 
 class AutenticacionAPI(APIView):
 
