@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'loginauthentication.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'login_db',
+        'NAME': 'users_db',
         'USER': 'admin_user',
         'PASSWORD': 'isis2503',
-        'HOST': '10.115.48.3',
+        'HOST': '10.115.48.18',
         'PORT': '',
     }
 }
