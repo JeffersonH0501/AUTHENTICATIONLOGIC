@@ -6,7 +6,7 @@ from .models import Usuario
 
 def verificar_usuario(documento, clave):
     try:
-        usuario = Usuario.objects.get(usuario=documento, clave=clave)
+        usuario = Usuario.objects.get(documento=documento, clave=clave)
         respuesta = "valido"
         tipo = usuario.tipo
     except Usuario.DoesNotExist:
