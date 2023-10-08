@@ -32,17 +32,6 @@ class AutenticacionAPI(APIView):
         respuesta_post = {'respuesta': respuesta, 'tipo': tipo}
 
         return Response(respuesta_post, status=status.HTTP_200_OK)
-    
 
-# Codigo para agregar usuarios a la base de datos
-agregar_usuario('1092524481', '123', 'profesionalSalud')
-agregar_usuario('0123456789', '123', 'director')
-agregar_usuario('1924203922', '123', 'paciente')
-agregar_usuario('4392923920', '123', 'paciente')
-agregar_usuario('2024203858', '123', 'paciente')
-agregar_usuario('8693938599', '123', 'paciente')
-agregar_usuario('5895863534', '123', 'paciente')
-agregar_usuario('1234235439', '123', 'paciente')
-agregar_usuario('2482366632', '123', 'paciente')
 
 
