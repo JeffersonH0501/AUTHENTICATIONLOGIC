@@ -28,8 +28,8 @@ class AutenticacionAPI(APIView):
             token_payload = {"documento": usuario.documento, "tipo": usuario.tipo}
             token = jwt.encode(token_payload, settings.SECRET_KEY, algorithm="HS256")
 
-            respuesta_post = {"respuesta": "valido", "token": token}
+            respuesta_post = {"token": token}
         else:
-            respuesta_post = {"respuesta": "invalido"}
+            respuesta_post = {}
 
         return Response(respuesta_post, status=status.HTTP_200_OK)
